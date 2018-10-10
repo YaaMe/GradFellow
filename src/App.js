@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import { Header, Home } from 'containers';
 import { header } from 'config';

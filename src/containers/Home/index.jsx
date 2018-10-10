@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'redux';
+// import { connect } from 'redux';
 import { Row, Col, Select, Button, Icon } from 'antd';
 // import { Breadcrumb } from 'containers';
 // <Breadcrumb items={['Home', 'List', 'App']}/>
