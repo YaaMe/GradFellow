@@ -20,4 +20,4 @@ const middleware = routerMiddleware(history);
 //       : createStore;
 
 
-export default store = applyMiddleware(middleware)(create)(reducers);
+export default applyMiddleware(middleware)(createStore)(reducers);

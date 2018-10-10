@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { Layout } from 'antd';
+import { Header, Home } from 'containers';
+import { header } from 'config';
+import store from 'store';
 import './App.css';
+
+const { Content } = Layout;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <Layout className="GradFellow layout">
+            <Header items={header}/>
+            <Content>
+              <Route path="/Home" component={Home} />
+            </Content>
+          </Layout>
+        </Router>
+      </Provider>
     );
   }
 }

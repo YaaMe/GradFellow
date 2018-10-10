@@ -1,0 +1,27 @@
+.Home .banner {
+    height: 10vh;
+    width: 100vw;
+    background-color: red;
+}
+
+.Home .Row {
+    margin-top: 2vh;
+}
+
+.Home .selectForm {
+    height: 90vh;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Home .main-button {
+    height: 5vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home .main-button .go-icon {
+    padding-top: 1vh;
+}
