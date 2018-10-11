@@ -7,7 +7,7 @@ import { updateHomeCountry, updateDesiredJob } from 'actions/user';
 // <Breadcrumb items={['Home', 'List', 'App']}/>
 
 // const mapStateToProps = ({ breadcrumb })
-
+import {homeBanner} from 'css/imgs';
 const Option = Select.Option;
 
 const renderSelectOption = (value) => (
@@ -34,10 +34,10 @@ class Home extends Component {
     const { homeCountry, job } = this.props.user;
     return (
       <div className="Home">
-        <div className="banner">lllllllarge image</div>
+        <img className="banner" src={homeBanner}/>
         <div className="selectForm">
           <Row className="Row">
-            <Col span={3} offset={6}>I came from</Col>
+            <Col span={3} offset={8}>I came from</Col>
             <Col span={6}>
               <Select
                 showSearch
@@ -52,7 +52,7 @@ class Home extends Component {
             </Col>
           </Row>
           <Row className="Row">
-            <Col span={3} offset={6}>looking for</Col>
+            <Col span={3} offset={8}>looking for</Col>
             <Col span={6}>
               <Select
                 showSearch
@@ -67,7 +67,7 @@ class Home extends Component {
             </Col>
           </Row>
           <Row className="Row">
-            <Col span={8} offset={8}>
+            <Col span={8} offset={9}>
               <Button className="main-button" type="primary" onClick={this.goNext}>
                 <Row>
                   <Col span={23}>
