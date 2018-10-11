@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-// import { connect } from 'redux';
 import { Row, Col, Select, Button, Icon } from 'antd';
+import { connect } from 'react-redux';
+import { homeCountries, jobs } from 'config';
+import { updateHomeCountry, updateDesiredJob } from 'actions/user';
 // import { Breadcrumb } from 'containers';
 // <Breadcrumb items={['Home', 'List', 'App']}/>
 
@@ -12,13 +14,24 @@ const renderSelectOption = (value) => (
   <Option key={value} value={value}>{value}</Option>
 )
 
-export default class Home extends Component {
-  handleChange = (value) => {
-    console.log(`change ${value}`)
+const mapStateToProps = ({ user }) => ({ user });
+const mapDispatchToProps = dispatch => ({
+  changeHomeCountry: value => dispatch(updateHomeCountry(value)),
+  changeDesiredJob: value => dispatch(updateDesiredJob(value))
+});
+
+class Home extends Component {
+  changeHomeCountry = value => {
+    this.props.changeHomeCountry(value);
+  }
+  changeDesiredJob = value => {
+    this.props.changeDesiredJob(value);
+  }
+  goNext = e => {
+    console.log(this.props);
   }
   render() {
-    const countries = ['--', 'China', 'India', 'Thailand', 'Indonesia'];
-    const jobs = ['--', 'Software Engineer', 'System Analyst', 'Technical Support', 'Business Analyst'];
+    const { homeCountry, job } = this.props.user;
     return (
       <div className="Home">
         <div className="banner">lllllllarge image</div>
@@ -28,13 +41,13 @@ export default class Home extends Component {
             <Col span={6}>
               <Select
                 showSearch
-                defaultValue="--"
+                defaultValue={homeCountry}
                 style={{ width: 200 }}
                 optionFilterProp="children"
-                onChange={this.handleChange}
+                onChange={this.changeHomeCountry}
                 filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
               >
-                {countries.map(renderSelectOption)}
+                {homeCountries.map(renderSelectOption)}
               </Select>
             </Col>
           </Row>
@@ -43,10 +56,10 @@ export default class Home extends Component {
             <Col span={6}>
               <Select
                 showSearch
-                defaultValue="--"
+                defaultValue={job}
                 style={{ width: 200 }}
                 optionFilterProp="children"
-                onChange={this.handleChange}
+                onChange={this.changeDesiredJob}
                 filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
               >
                 {jobs.map(renderSelectOption)}
@@ -55,7 +68,7 @@ export default class Home extends Component {
           </Row>
           <Row className="Row">
             <Col span={8} offset={8}>
-              <Button className="main-button" type="primary">
+              <Button className="main-button" type="primary" onClick={this.goNext}>
                 <Row>
                   <Col span={23}>
                     <label>Hear job stories from those<br/>
@@ -73,3 +86,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Layout } from 'antd';
 import { Header, Home } from 'containers';
 import { header } from 'config';
@@ -17,7 +17,10 @@ class App extends Component {
           <Layout className="GradFellow layout">
             <Header items={header}/>
             <Content>
-              <Route path="/Home" component={Home} />
+              <Switch>
+                <Route path="/Home" component={Home} />
+                <Redirect to="/Home" />
+              </Switch>
             </Content>
           </Layout>
         </Router>
