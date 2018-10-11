@@ -3,7 +3,7 @@ import { Row, Col } from 'antd';
 import { connect } from 'react-redux';
 import { StoryCard } from 'components';
 
-const mapStateToProps = ({ user }) => ({ user });
+const mapStateToProps = ({ user, fellow }) => ({ user, fellow });
 const mapDispatchToProps = dispatch => ({});
 
 class StoriesCard extends Component {
@@ -28,16 +28,18 @@ class StoriesCard extends Component {
       </div>
     )
   }
-  renderCard = card => {
+  renderCard = (card, i) => {
     return (
-      <Col span={8}>
-        <StoryCard name="test"/>
+      <Col span={8} key={i}>
+        <StoryCard {...card} />
       </Col>
     )
   }
   render() {
-    const { homeCountry, job } = this.props.user;
-    const cards = [1, 2, 3, 4, 5];
+    const { user, fellow } = this.props;
+    const { homeCountry, job } = user;
+    const { reviews } = fellow;
+    const cards = reviews;
     return (
       <div className="StoriesCard">
         <div className="title">
