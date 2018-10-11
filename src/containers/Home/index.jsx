@@ -28,7 +28,7 @@ class Home extends Component {
     this.props.changeDesiredJob(value);
   }
   goNext = e => {
-    console.log(this.props);
+    this.props.history.push('/StoriesCard');
   }
   render() {
     const { homeCountry, job } = this.props.user;
