@@ -1,7 +1,7 @@
 .Home .banner {
-    height: 10vh;
+    height: calc(100vw / 16 * 4);
     width: 100vw;
-    background-color: red;
+    background-size: cover;
 }
 
 .Home .Row {

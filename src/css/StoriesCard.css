@@ -1,0 +1,7 @@
+.StoriesCard .title {
+}
+
+.StoriesCard .title label {
+    text-decoration: underline;
+    font-weight: bold;
+}
