@@ -8,22 +8,34 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: [
+      skillsHave: [
         '3 months Python Subject',
         '12 weeks SQL in Uni',
         '5 years of Microsoft Office Usagev'
       ],
-      learned: [
+      skillsLearned: [
         'Advanced Python though on-job traning',
         'Advanced User Story writing through on-job traning',
         'Confluence'
       ],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsRecommend: ['Business Process Modeling'],
+      skillsRolesInCompany: ['Product Owner', 'User Experience Designer', 'Technical Lead', 'Quality Assurance'],
+      skillsTasksAuto: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsTasksCollab: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ]
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }, {
     id: "2",
@@ -34,14 +46,26 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: ['3 months Python Subject', '12 weeks SQL in Uni', '5 years of Microsoft Office Usagev'],
-      learned: [],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsHave: [
+        '3 months Python Subject',
+        '12 weeks SQL in Uni',
+        '5 years of Microsoft Office Usagev'
+      ],
+      skillsLearned: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsRecommend: [],
+      skillsRolesInCompany: [],
+      skillsTasksAuto: [],
+      skillsTasksCollab: []
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }, {
     id: "3",
@@ -52,14 +76,26 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: ['3 months Python Subject', '12 weeks SQL in Uni', '5 years of Microsoft Office Usagev'],
-      learned: [],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsHave: [
+        '3 months Python Subject',
+        '12 weeks SQL in Uni',
+        '5 years of Microsoft Office Usagev'
+      ],
+      skillsLearned: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsRecommend: [],
+      skillsRolesInCompany: [],
+      skillsTasksAuto: [],
+      skillsTasksCollab: []
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }, {
     id: "4",
@@ -70,14 +106,26 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: ['3 months Python Subject', '12 weeks SQL in Uni', '5 years of Microsoft Office Usagev'],
-      learned: [],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsHave: [
+        '3 months Python Subject',
+        '12 weeks SQL in Uni',
+        '5 years of Microsoft Office Usagev'
+      ],
+      skillsLearned: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsRecommend: [],
+      skillsRolesInCompany: [],
+      skillsTasksAuto: [],
+      skillsTasksCollab: []
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }, {
     id: "5",
@@ -88,14 +136,26 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: ['3 months Python Subject', '12 weeks SQL in Uni', '5 years of Microsoft Office Usagev'],
-      learned: [],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsHave: [
+        '3 months Python Subject',
+        '12 weeks SQL in Uni',
+        '5 years of Microsoft Office Usagev'
+      ],
+      skillsLearned: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsRecommend: [],
+      skillsRolesInCompany: [],
+      skillsTasksAuto: [],
+      skillsTasksCollab: []
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }, {
     id: "6",
@@ -106,14 +166,26 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: ['3 months Python Subject', '12 weeks SQL in Uni', '5 years of Microsoft Office Usagev'],
-      learned: [],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsHave: [
+        '3 months Python Subject',
+        '12 weeks SQL in Uni',
+        '5 years of Microsoft Office Usagev'
+      ],
+      skillsLearned: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsRecommend: ['Business Process Modeling'],
+      skillsRolesInCompany: [],
+      skillsTasksAuto: [],
+      skillsTasksCollab: []
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }, {
     id: "7",
@@ -124,14 +196,26 @@ const initState = {
     nationality: '',
     contacted: false,
     skills: {
-      startWith: ['3 months Python Subject', '12 weeks SQL in Uni', '5 years of Microsoft Office Usagev'],
-      learned: [],
-      recommanded: '',
-      roles: [],
-      tasks: [],
-      perform: []
+      skillsHave: [
+        '3 months Python Subject',
+        '12 weeks SQL in Uni',
+        '5 years of Microsoft Office Usagev'
+      ],
+      skillsLearned: [
+        'Advanced Python though on-job traning',
+        'Advanced User Story writing through on-job traning',
+        'Confluence'
+      ],
+      skillsRecommend: [],
+      skillsRolesInCompany: [],
+      skillsTasksAuto: [],
+      skillsTasksCollab: []
     },
     companyCulture: {
+      ccCompetitivenss: '',
+      ccDescribedByColleagues: '',
+      ccRelationshipWithColleague: '',
+      ccRelationshipWithMgr: ''
     }
   }]
 };
