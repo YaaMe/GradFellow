@@ -33,10 +33,13 @@ class StoriesCard extends Component {
       </div>
     )
   }
+  onClick = ({ id }) => {
+    this.props.history.push(`/Stories/${id}`)
+  }
   renderCard = (card, i) => {
     return (
       <Col span={48 / this.state.pageSize} key={i}>
-        <StoryCard {...card} />
+        <StoryCard {...card} onClick={e => this.onClick(card)}/>
       </Col>
     )
   }
