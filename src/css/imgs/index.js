@@ -1,1 +1,2 @@
-export { default as homeBanner } from './HomeBanner.jpeg';
+export { default as homeBanner } from './HomeBanner.png';
+export { default as logo } from './logo.png';
