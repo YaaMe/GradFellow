@@ -13,11 +13,11 @@ const title = (firstName, lastName, currentPosition, currentCompany) => (
 )
 
 
-export default ({ onClick, firstName, lastName, currentPosition, currentCompany, skills: { startWith }}) => (
+export default ({ onClick, firstName, lastName, currentPosition, currentCompany, skills: { skillsHave }}) => (
   <Card
     title={title(firstName, lastName, currentPosition, currentCompany)}
     onClick={onClick}
   >
-    <Markdown source={skillsHaveTemplate(startWith)}/>
+    <Markdown source={skillsHaveTemplate(skillsHave)}/>
   </Card>
 )
