@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Pagination } from 'antd';
 import { connect } from 'react-redux';
 import { StoryCard } from 'components';
 
@@ -7,8 +7,13 @@ const mapStateToProps = ({ user, fellow }) => ({ user, fellow });
 const mapDispatchToProps = dispatch => ({});
 
 class StoriesCard extends Component {
+  state = {
+    page: 1,
+    pageSize: 6
+  }
   cardRegion = cards => {
-    if (cards.length > 3) {
+    const cols = this.state.pageSize / 2;
+    if (cards.length > cols) {
       return (
         <div className="cards">
           <Row gutter={16}>
@@ -20,33 +25,44 @@ class StoriesCard extends Component {
     return (
       <div className="cards">
         <Row gutter={16}>
-          {cards.slice(0, 3).map(this.renderCard)}
+          {cards.slice(0, cols).map(this.renderCard)}
         </Row>
         <Row gutter={16}>
-          {cards.slice(3, 6).map(this.renderCard)}
+          {cards.slice(cols, cols * 2).map(this.renderCard)}
         </Row>
       </div>
     )
   }
   renderCard = (card, i) => {
     return (
-      <Col span={8} key={i}>
+      <Col span={48 / this.state.pageSize} key={i}>
         <StoryCard {...card} />
       </Col>
     )
   }
+  onChange = (page, pageSize) => {
+    this.setState({ page, pageSize });
+  }
   render() {
+    const { page, pageSize } = this.state;
     const { user, fellow } = this.props;
     const { homeCountry, job } = user;
     const { reviews } = fellow;
-    const cards = reviews;
+    const cards = reviews.slice((page - 1) * pageSize, page * pageSize)
     return (
       <div className="StoriesCard">
         <div className="title">
           Hear all the stories told by your graduate fellows coming from <label>{homeCountry}</label><br/>
-           and successfully employed as a <label>{job}</label>
+          and successfully employed as a <label>{job}</label>
         </div>
         {this.cardRegion(cards)}
+        <Pagination
+          onChange={this.onChange}
+          hideOnSinglePage
+          current={page}
+          pageSize={pageSize}
+          total={reviews.length}
+        />
       </div>
     );
   }
