@@ -4,6 +4,7 @@ import { logo } from 'css/imgs';
 import { Row, Col, Layout, Menu, Button, Popover } from 'antd';
 import { Link } from 'react-router-dom';
 import LoginForm from 'containers/LoginForm';
+import FellowPopover from 'containers/FellowPopover';
 
 const { Header } = Layout;
 
@@ -26,12 +27,16 @@ class HeaderBar extends Component {
   )
 
   render() {
-    const { items } = this.props;
+    const { items, user } = this.props;
+    let menuItems = items;
+    if (!user.isAdmin) {
+      menuItems = items.filter(item => !item.admin)
+    }
     return (
       <Header>
         <Row>
           <Col span={3}>
-            <img src={logo}/>
+            <img src={logo} alt="logo"/>
           </Col>
           <Col span={15}>
             <Menu
@@ -40,12 +45,14 @@ class HeaderBar extends Component {
               defaultSelectedKeys={['0']}
               style={{ lineHeight: '64px' }}
             >
-              {items.map(this.renderMenuItem)}
+              {menuItems.map(this.renderMenuItem)}
             </Menu>
           </Col>
           <Col span={3} offset={3}>
             <Popover
-              content={<LoginForm onClose={this.clickLogin} />}
+              content={user.token ?
+                       <FellowPopover onClose={this.clickLogin}/> :
+                       <LoginForm onClose={this.clickLogin} />}
               placement="bottomRight"
               title="Hello"
               trigger="click"

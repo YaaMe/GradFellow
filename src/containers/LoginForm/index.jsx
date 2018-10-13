@@ -2,14 +2,31 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Form, Button, Input, Icon } from 'antd';
 
-const mapStateToProps = undefined;
+const mapStateToProps = ({ user }) => ({ user });
 const mapDispatchToProps = dispatch => ({});
 class LoginForm extends Component {
   handleSubmit = e => {
+    this.props.onClose(e);
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        console.log(values);
+      }
+    })
+  }
+  login = e => {
+    this.props.onClose(e);
   }
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { user } = this.props;
+    if (user.isLogin) {
+      return (
+        <div>
+          <Button type="primary" onClick={this.logout}>Log out</Button>
+        </div>
+      )
+    }
     return (
       <div>
         <Form onSubmit={this.handleSubmit}>
@@ -31,7 +48,7 @@ class LoginForm extends Component {
              )}
           </Form.Item>
           <Form.Item>
-            <Button type="primary">Log in</Button>
+            <Button type="primary" htmlType="submit">Log in</Button>
           </Form.Item>
         </Form>
       </div>
