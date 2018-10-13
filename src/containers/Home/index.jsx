@@ -34,7 +34,13 @@ class Home extends Component {
     const { homeCountry, job } = this.props.user;
     return (
       <div className="Home">
-        <img className="banner" src={homeBanner}/>
+        <div className="banner-region">
+          <img className="banner" src={homeBanner}/>
+          <div className="hint">
+            We now have <label className="hint-number">189</label> stories shared by fellow graduates <br/>
+            from <label className="hint-number">10</label> countries successfully employed in Australia
+          </div>
+        </div>
         <div className="body-region">
           <Row><Col span={18} offset={3}>
             <Row className="main-form">
