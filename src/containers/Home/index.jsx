@@ -35,52 +35,44 @@ class Home extends Component {
     return (
       <div className="Home">
         <img className="banner" src={homeBanner}/>
-        <div className="selectForm">
-          <Row className="Row">
-            <Col span={3} offset={8}>I came from</Col>
-            <Col span={6}>
-              <Select
-                showSearch
-                defaultValue={homeCountry}
-                style={{ width: 200 }}
-                optionFilterProp="children"
-                onChange={this.changeHomeCountry}
-                filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-              >
-                {homeCountries.map(renderSelectOption)}
-              </Select>
-            </Col>
-          </Row>
-          <Row className="Row">
-            <Col span={3} offset={8}>looking for</Col>
-            <Col span={6}>
-              <Select
-                showSearch
-                defaultValue={job}
-                style={{ width: 200 }}
-                optionFilterProp="children"
-                onChange={this.changeDesiredJob}
-                filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-              >
-                {jobs.map(renderSelectOption)}
-              </Select>
-            </Col>
-          </Row>
-          <Row className="Row">
-            <Col span={8} offset={9}>
-              <Button className="main-button" type="primary" onClick={this.goNext}>
+        <div className="body-region">
+          <Row><Col span={18} offset={3}>
+            <Row className="main-form">
+              <Col span={8} offset={1} className="form-item">
+                <Row className="item-title">I came from</Row>
                 <Row>
-                  <Col span={23}>
-                    <label>Hear job stories from those<br/>
-                      with similar backgrounds</label>
-                  </Col>
-                  <Col className="go-icon" span={1}>
-                    <label><Icon type="right" /></label>
-                  </Col>
+                  <Select
+                    showSearch
+                    defaultValue={homeCountry}
+                    style={{ width: '100%' }}
+                    optionFilterProp="children"
+                    onChange={this.changeHomeCountry}
+                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                  >
+                    {homeCountries.map(renderSelectOption)}
+                  </Select>
                 </Row>
-              </Button>
-            </Col>
-          </Row>
+              </Col>
+              <Col span={8} offset={1} className="form-item">
+                <Row className="item-title">looking for</Row>
+                <Row>
+                  <Select
+                    showSearch
+                    defaultValue={job}
+                    style={{ width: '100%' }}
+                    optionFilterProp="children"
+                    onChange={this.changeDesiredJob}
+                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                  >
+                    {jobs.map(renderSelectOption)}
+                  </Select>
+                </Row>
+              </Col>
+              <Col span={4} offset={1} className="form-item">
+                <Button className="main-button" type="primary" onClick={this.goNext}>Read stories</Button>
+              </Col>
+            </Row>
+          </Col></Row>
         </div>
       </div>
     );

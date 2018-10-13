@@ -1,3 +1,19 @@
 export * from './constants';
 
-export const header = ['Home', 'Stories', 'Donate'];
+export const header = [{
+  title: 'Home',
+  route: 'Home',
+  options: {}
+}, {
+  title: 'Stories',
+  route: 'Stories',
+  options: {
+    disabled: true
+  }
+}, {
+  title: 'Donate',
+  route: 'Donate',
+  options: {
+
+  }
+}];
