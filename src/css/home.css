@@ -1,16 +1,26 @@
 .Home .banner {
-    height: calc(100vw / 16 * 4);
+    height: 30vw;
     width: 100vw;
     background-size: cover;
 }
 
-.Home .Row {
---  margin-top: 2vh;
+.Home .hint {
+    position: absolute;
+    width: 100vw;
+    height: 10vw;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    margin-top: -11vw;
+}
+.Home .hint .hint-number {
+    font-size: 35px;
+    color: #235292;
 }
 
 .Home .body-region {
     height: 90vh;
-
 }
 .Home .main-form {
     margin-top: 2vh;
