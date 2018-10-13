@@ -7,13 +7,18 @@ export const header = [{
 }, {
   title: 'Stories',
   route: 'Stories',
-  options: {
-    disabled: true
-  }
+//  options: {
+//    disabled: true
+//  }
+}, {
+
 }, {
   title: 'Donate',
   route: 'Donate',
-  options: {
+  options: {}
+}];
 
-  }
+export const fellowPopover = [{
+  title: 'Share your story',
+  route: 'Share',
 }];

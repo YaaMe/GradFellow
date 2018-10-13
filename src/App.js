@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Layout } from 'antd';
-import { Header, Home, StoriesCard, Story } from 'containers';
+import { Header, Home, StoriesCard, Story, ShareStory } from 'containers';
 import { header } from 'config';
 import store from 'store';
 import './App.css';
@@ -21,6 +21,7 @@ class App extends Component {
                 <Route path="/Home" component={Home} />
                 <Route path="/StoriesCard" component={StoriesCard} />
                 <Route path="/Stories/:id" component={Story} />
+                <Route path="/Share" component={ShareStory} />
                 <Redirect to="/Home" />
               </Switch>
             </Content>

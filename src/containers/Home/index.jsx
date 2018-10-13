@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Select, Button, Icon } from 'antd';
+import { Row, Col, Select, Button } from 'antd';
 import { connect } from 'react-redux';
 import { homeCountries, jobs } from 'config';
 import { updateHomeCountry, updateDesiredJob } from 'actions/user';
@@ -35,7 +35,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <div className="banner-region">
-          <img className="banner" src={homeBanner}/>
+          <img className="banner" src={homeBanner} alt="banner"/>
           <div className="hint">
             We now have <label className="hint-number">189</label> stories shared by fellow graduates <br/>
             from <label className="hint-number">10</label> countries successfully employed in Australia
