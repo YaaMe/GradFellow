@@ -1,4 +1,5 @@
 export * from './constants';
+export * from './axios';
 
 export const header = [{
   title: 'Home',
@@ -21,4 +22,6 @@ export const header = [{
 export const fellowPopover = [{
   title: 'Share your story',
   route: 'Share',
+}, {
+  title: 'Logout',
 }];

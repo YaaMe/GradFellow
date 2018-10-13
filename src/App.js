@@ -4,12 +4,18 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { Layout } from 'antd';
 import { Header, Home, StoriesCard, Story, ShareStory } from 'containers';
 import { header } from 'config';
+import { getCountries } from 'actions/country';
+import { getPositions } from 'actions/position';
 import store from 'store';
 import './App.css';
 
 const { Content } = Layout;
 
 class App extends Component {
+  componentDidMount() {
+    store.dispatch(getCountries());
+    store.dispatch(getPositions());
+  }
   render() {
     return (
       <Provider store={store}>

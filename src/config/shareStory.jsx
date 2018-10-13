@@ -1,4 +1,4 @@
-export const getFormInfo = (homeCountries) => {
+export const getFormInfo = (countries, positions) => {
   const basicInfo = [{
     id: 'firstName',
     title: 'First Name',
@@ -10,6 +10,8 @@ export const getFormInfo = (homeCountries) => {
   }, {
     id: 'currentPosition',
     title: 'Current Position',
+    type: 'select',
+    selectOptions: positions,
     col: { span: 12 },
   }, {
     id: 'currentCompany',
@@ -19,7 +21,7 @@ export const getFormInfo = (homeCountries) => {
     id: 'nationality',
     title: 'Nationality',
     type: 'select',
-    selectOptions: homeCountries,
+    selectOptions: countries,
     col: { span: 12 },
   }, {
     id: 'beContacted',

@@ -1,0 +1,37 @@
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" },
+  "login": {
+    "firstName": "kkk",
+    "lastName": "miao",
+    "token": "sklfjdkjsdklj"
+  },
+  "country": [{
+    "id": 1,
+    "name": "China"
+  }, {
+    "id": 2,
+    "name": "India"
+  }, {
+    "id": 3,
+    "name": "Korean"
+  }, {
+    "id": 4,
+    "name": "Japan"
+  }],
+  "position": [
+    {"id": 1, "name": "Software Engineer"},
+    {"id": 2, "name": "System Analyst"},
+    {"id": 3, "name": "Business Analyst"},
+    {"id": 4, "name": "Technical Support"},
+    {"id": 5, "name": "Network Engineer"},
+    {"id": 6, "name": "Technical Consultant"},
+    {"id": 7, "name": "Web Developer"},
+    {"id": 8, "name": "Software Test"}
+  ]
+}

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Row, Col, Form } from 'antd';
-import { homeCountries, jobs } from 'config';
 import { getRegion } from 'utils/form';
 import { getFormInfo } from 'config/shareStory';
 
 
-const mapStateToProps = ({ user }) => ({ user });
+const mapStateToProps = ({ user, countries, positions }) => ({ user, countries, positions });
 const mapDispatchToProps = dispatch => ({});
 
 class ShareStory extends Component {
@@ -17,7 +16,8 @@ class ShareStory extends Component {
   }
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { basicInfo, skills, companyCulture } = getFormInfo(homeCountries);
+    const {countries, positions} = this.props;
+    const { basicInfo, skills, companyCulture } = getFormInfo(countries, positions);
     const basicInfoRow = [
       ['firstName', 'lastName'],
       ['currentPosition', 'currentCompany'],

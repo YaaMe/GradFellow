@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Form, Button, Input, Icon } from 'antd';
+import { login } from 'actions/user';
 
 const mapStateToProps = ({ user }) => ({ user });
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  login: values => dispatch(login(values))
+});
 class LoginForm extends Component {
   handleSubmit = e => {
     this.props.onClose(e);
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log(values);
+        this.props.login(values);
       }
     })
   }

@@ -28,10 +28,6 @@ class HeaderBar extends Component {
 
   render() {
     const { items, user } = this.props;
-    let menuItems = items;
-    if (!user.isAdmin) {
-      menuItems = items.filter(item => !item.admin)
-    }
     return (
       <Header>
         <Row>
@@ -45,7 +41,7 @@ class HeaderBar extends Component {
               defaultSelectedKeys={['0']}
               style={{ lineHeight: '64px' }}
             >
-              {menuItems.map(this.renderMenuItem)}
+              {items.map(this.renderMenuItem)}
             </Menu>
           </Col>
           <Col span={3} offset={3}>
@@ -58,7 +54,7 @@ class HeaderBar extends Component {
               trigger="click"
               visible={this.state.popover}
             >
-              <Button ghost onClick={this.clickLogin}>Login</Button>
+              <Button ghost onClick={this.clickLogin}>{user.token ? user.lastName : 'Login'}</Button>
             </Popover>
           </Col>
         </Row>

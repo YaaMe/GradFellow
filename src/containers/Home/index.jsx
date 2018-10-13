@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Select, Button } from 'antd';
 import { connect } from 'react-redux';
-import { homeCountries, jobs } from 'config';
 import { updateHomeCountry, updateDesiredJob } from 'actions/user';
 // import { Breadcrumb } from 'containers';
 // <Breadcrumb items={['Home', 'List', 'App']}/>
@@ -14,13 +13,16 @@ const renderSelectOption = (value) => (
   <Option key={value} value={value}>{value}</Option>
 )
 
-const mapStateToProps = ({ user }) => ({ user });
+const mapStateToProps = ({ user, countries, positions }) => ({ user, countries, positions });
 const mapDispatchToProps = dispatch => ({
   changeHomeCountry: value => dispatch(updateHomeCountry(value)),
   changeDesiredJob: value => dispatch(updateDesiredJob(value))
 });
 
 class Home extends Component {
+  componentDidMount() {
+    
+  }
   changeHomeCountry = value => {
     this.props.changeHomeCountry(value);
   }
@@ -31,6 +33,7 @@ class Home extends Component {
     this.props.history.push('/StoriesCard');
   }
   render() {
+    const { countries, positions } = this.props;
     const { homeCountry, job } = this.props.user;
     return (
       <div className="Home">
@@ -55,7 +58,7 @@ class Home extends Component {
                     onChange={this.changeHomeCountry}
                     filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                   >
-                    {homeCountries.map(renderSelectOption)}
+                    {countries.map(renderSelectOption)}
                   </Select>
                 </Row>
               </Col>
@@ -70,7 +73,7 @@ class Home extends Component {
                     onChange={this.changeDesiredJob}
                     filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                   >
-                    {jobs.map(renderSelectOption)}
+                    {positions.map(renderSelectOption)}
                   </Select>
                 </Row>
               </Col>
