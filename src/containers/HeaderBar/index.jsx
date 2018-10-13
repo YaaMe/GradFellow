@@ -19,9 +19,9 @@ class HeaderBar extends Component {
     this.setState({ popover: !this.state.popover });
   }
 
-  renderMenuItem = (menu, index) => (
-    <Menu.Item key={index}>
-      <Link to={`/${menu}`}>{menu}</Link>
+  renderMenuItem = ({ title, route, options = {}}, index) => (
+    <Menu.Item key={index} {...options}>
+      <Link to={`/${route}`}>{title}</Link>
     </Menu.Item>
   )
 
