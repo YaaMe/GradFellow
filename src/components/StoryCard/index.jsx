@@ -5,10 +5,10 @@ import { skillsHaveTemplate } from 'utils/markdown';
 
 // title
 const title = (firstName, lastName, currentPosition, currentCompany) => (
-  <div>
-    <label>{`${lastName} ${firstName}`}</label>
-    <label>{`${currentPosition}
-      ${currentCompany}`}</label>
+  <div style={{ width: '100%' }}>
+    <div style={{ color: '#4676B5' }}><label>{`${lastName} ${firstName}`}</label></div>
+    <div style={{ textAlign: 'right' }}><label>{currentPosition}</label></div>
+    <div style={{ textAlign: 'right' }}><label>{`@ ${currentCompany}`}</label></div>
   </div>
 )
 
