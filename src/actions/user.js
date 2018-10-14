@@ -9,7 +9,8 @@ export const login = (data) => ({
   type: ACTION_TYPE.LOGIN,
   $fetch: {
     requestBody: {
-      url: '/login/',
+      url: '/login',
+      method: 'post',
       data: {...data},
     }
   }

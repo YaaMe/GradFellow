@@ -19,12 +19,12 @@ import {
 } from 'utils/markdown';
 
 const mapStateToProps = ({
-  fellow: { reviews },
+  fellow: { cards },
   user
 }, {
   match: { params: { id }}}
 ) => ({
-  story: reviews.find(story => story.id === id),
+  story: cards.find(story => story.id === Number(id)),
   user
 });
 
@@ -33,7 +33,8 @@ const mapDispatchToProps = dispatch => ({});
 class Story extends Component {
   render() {
     const { story = {}, user } = this.props;
-    const { firstName, lastName, currentPosition, currentCompany } = story;
+
+    const { firstName, lastName, position, company } = story;
     const {
       skillsHave,
       skillsLearned,
@@ -41,6 +42,13 @@ class Story extends Component {
       skillsRolesInCompany = [],
       skillsTasksAuto,
       skillsTasksCollab
+    } = story;
+    const {
+      ccDescByColleagues,
+      ccCompetitiveness,
+      ccRelationshipWithMgr,
+      ccWorkingApproach,
+      ccRelationshipWithColleague
     } = story;
 
     const graphOptions = {
@@ -64,7 +72,7 @@ class Story extends Component {
         <Breadcrumb items={['Stories', user.job, user.homeCountry]}/>
         <Row>
           <Col span={8}>
-            <Markdown source={userInfoTemplate(firstName, lastName, currentPosition, currentCompany)}/>
+            <Markdown source={userInfoTemplate(firstName, lastName, position, company)}/>
             <Button type="primary" ghost>Message</Button>
           </Col>
           <Col span={16}>
@@ -93,7 +101,13 @@ class Story extends Component {
               </Col>
             </Row>
             <Row>
-              <Markdown source={companyCultureTemplate()} />
+              <Markdown source={companyCultureTemplate(
+                  ccDescByColleagues,
+                  ccCompetitiveness,
+                  ccRelationshipWithMgr,
+                  ccWorkingApproach,
+                  ccRelationshipWithColleague
+              )} />
             </Row>
           </Col>
         </Row>

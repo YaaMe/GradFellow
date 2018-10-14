@@ -3,6 +3,7 @@ import { ACTION_TYPE } from 'actions/user';
 const initState = {
   homeCountry: '',
   job: '',
+  cards: []
 };
 
 export default (state = initState, action) => {

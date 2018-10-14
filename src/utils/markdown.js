@@ -42,22 +42,22 @@ ${skillsTasksCollab.map(listItem).reduce(groupItem, [])}
 `;
 
 export const companyCultureTemplate = (
-  ccCompetitivenss,
-  ccDescribedByColleagues,
-  ccRelationshipWithColleague,
-  ccRelationshipWithMgr
+  ccDescByColleagues,
+  ccCompetitiveness,
+  ccRelationshipWithMgr,
+  ccWorkingApproach,
+  ccRelationshipWithColleague
 ) => `
 ## My Workplace Culture
 * * *
 I would describe my company competitive in these perspectives:
-
-inclusivity
+${ccCompetitiveness}
 * * *
-My friends describe me as a caring person with attention to details.
+${ccDescByColleagues}
 * * *
-I like the working style of agile here because it made me stay productive and inspired.
+${ccWorkingApproach}
 * * *
-I like how I'm trusted in my field of work. My manager listens to my view and guides me to explore
+${ccRelationshipWithMgr}
 * * *
-Colleagues are friendly and fun. We usually exchange news over lunch like friends. Though everyone is busy, I still receive support as long as I ask for it.
+${ccRelationshipWithColleague}
 `;

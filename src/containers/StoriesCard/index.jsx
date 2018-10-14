@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import { Row, Col, Pagination } from 'antd';
 import { connect } from 'react-redux';
 import { StoryCard } from 'components';
+import { getStoriesCard } from 'actions/fellow';
 
 const mapStateToProps = ({ user, fellow }) => ({ user, fellow });
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  fetchCard: data => dispatch(getStoriesCard(data))
+});
 
 class StoriesCard extends Component {
   state = {
     page: 1,
     pageSize: 6
+  }
+  componentDidMount() {
+    const { homeCountry, job } = this.props.user;
+    this.props.fetchCard({homeCountry, job});
   }
   cardRegion = cards => {
     const cols = this.state.pageSize / 2;
@@ -50,21 +57,20 @@ class StoriesCard extends Component {
     const { page, pageSize } = this.state;
     const { user, fellow } = this.props;
     const { homeCountry, job } = user;
-    const { reviews } = fellow;
-    const cards = reviews.slice((page - 1) * pageSize, page * pageSize)
+    let { cards } = fellow;
     return (
       <div className="StoriesCard">
         <div className="title">
           Hear all the stories told by your graduate fellows coming from <label>{homeCountry}</label><br/>
           and successfully employed as a <label>{job}</label>
         </div>
-        {this.cardRegion(cards)}
+        {this.cardRegion(cards.slice((page - 1) * pageSize, page * pageSize))}
         <Pagination
           onChange={this.onChange}
           hideOnSinglePage
           current={page}
           pageSize={pageSize}
-          total={reviews.length}
+          total={fellow.cards.length}
         />
       </div>
     );

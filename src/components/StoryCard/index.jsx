@@ -13,9 +13,9 @@ const title = (firstName, lastName, currentPosition, currentCompany) => (
 )
 
 
-export default ({ onClick, firstName, lastName, currentPosition, currentCompany,  skillsHave }) => (
+export default ({ onClick, firstName, lastName, position, company,  skillsHave }) => (
   <Card
-    title={title(firstName, lastName, currentPosition, currentCompany)}
+    title={title(firstName, lastName, position, company)}
   >
     <Markdown source={skillsHaveTemplate(skillsHave)}/>
     <Button style={{ float: 'right' }} type="primary" onClick={onClick}>Read More</Button>
