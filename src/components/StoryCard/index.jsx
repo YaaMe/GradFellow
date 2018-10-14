@@ -4,11 +4,11 @@ import Markdown from 'react-markdown';
 import { skillsHaveTemplate } from 'utils/markdown';
 
 // title
-const title = (firstName, lastName, currentPosition, currentCompany) => (
+const title = (firstName, lastName, position, company) => (
   <div style={{ width: '100%' }}>
     <div style={{ color: '#4676B5' }}><label>{`${lastName} ${firstName}`}</label></div>
-    <div style={{ textAlign: 'right' }}><label>{currentPosition}</label></div>
-    <div style={{ textAlign: 'right' }}><label>{`@ ${currentCompany}`}</label></div>
+    <div style={{ textAlign: 'right' }}><label>{position}</label></div>
+    <div style={{ textAlign: 'right' }}><label>{`@ ${company}`}</label></div>
   </div>
 )
 

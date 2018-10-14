@@ -1,28 +1,40 @@
-export const parseData = (data) => {
-  const {
-    skillsRolesInCompany = '',
-    skillsTasksAuto = '',
-    skillsTasksCollab =''
-  } = data;
-  return {
-    ...data,
-    skillsTasksAuto: skillsTasksAuto.split('&'),
-    skillsTasksCollab: skillsTasksCollab.split('&'),
-    skillsRolesInCompany: skillsRolesInCompany.split('&')
-  };
-};
-
-export const parseDataToServer = (data) => {
-  return {
-    ...data
-  };
-};
-
-export const parseServerToData = (data) => {
-  return {
-    ...data
-  };
-};
+export const parseCardsToServer = ({
+  skillsHave,
+  ccRelationshipWithColleague,
+  firstName,
+  lastName,
+  ccDescByColleagues,
+  skillsTasksCollab,
+  skillsRecommend,
+  company,
+  skillsTasksAuto,
+  skillsRolesInCompany,
+  skillsLearned,
+  ccCompetitiveness,
+  tobeContacted,
+  ccRelationshipWithMgr,
+  nationality,
+  position,
+  ccWorkingApproach,
+}) => ({
+  skills_have: skillsHave,
+  cc_relationship_with_colleague: ccRelationshipWithColleague,
+  first_name: firstName,
+  last_name: lastName,
+  cc_desc_by_colleagues: ccDescByColleagues,
+  skills_tasks_collab: skillsTasksAuto,
+  skills_recommend: skillsRecommend,
+  company: company,
+  skills_tasks_auto: skillsTasksAuto,
+  skills_roles_in_company: skillsRolesInCompany,
+  skills_learned: skillsLearned,
+  cc_competitiveness: ccCompetitiveness,
+  tobe_contacted: tobeContacted,
+  cc_relationship_with_mgr: ccRelationshipWithMgr,
+  nationality: nationality,
+  position: position,
+  cc_working_approach: ccWorkingApproach,
+});
 
 export const parseCardsFromServer = ({
   skills_have,

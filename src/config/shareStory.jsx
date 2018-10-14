@@ -8,13 +8,13 @@ export const getFormInfo = (countries, positions) => {
     title: 'Last Name',
     col: { span: 11, offset: 1 },
   }, {
-    id: 'currentPosition',
+    id: 'position',
     title: 'Current Position',
     type: 'select',
     selectOptions: positions,
     col: { span: 12 },
   }, {
-    id: 'currentCompany',
+    id: 'company',
     title: 'Current Company',
     col: { span: 11, offset: 1 },
   }, {
@@ -24,14 +24,14 @@ export const getFormInfo = (countries, positions) => {
     selectOptions: countries,
     col: { span: 12 },
   }, {
-    id: 'beContacted',
+    id: 'tobeContacted',
     title: 'Are you willing to be contacted?',
     type: 'radio',
     radioOptions: [{
-      value: 'true',
+      value: 'True',
       title: 'Yes'
     }, {
-      value: 'false',
+      value: 'False',
       title: 'No'
     }],
     col: { span: 11, offset: 1 },

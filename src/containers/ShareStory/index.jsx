@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Row, Col, Form, Button } from 'antd';
 import { getRegion } from 'utils/form';
-import { parseData } from 'utils/parseData';
+import { parseCardsFromServer, parseCardsToServer } from 'utils/parseData';
 import { getFormInfo } from 'config/shareStory';
 import { StoryTemplate } from 'containers/Story';
+import { shareStory } from 'actions/user';
 
 const mapStateToProps = ({ user, countries, positions }) => ({ user, countries, positions });
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  shareStory: data => dispatch(shareStory(data))
+});
 
 class ShareStory extends Component {
   state = {
@@ -15,7 +18,7 @@ class ShareStory extends Component {
     values: {}
   }
   componentDidMount() {
-    if (!this.props.user.token) {
+    if (!this.props.user.access_token) {
       this.props.history.push('/Home');
     }
   }
@@ -31,7 +34,7 @@ class ShareStory extends Component {
   handleSubmit = e => {
     this.props.form.validateFields((err, values) => {
       if(!err) {
-        console.log(values);
+        this.props.shareStory(parseCardsToServer(values));
       }
     })
   }
@@ -42,8 +45,8 @@ class ShareStory extends Component {
     const { basicInfo, skills, companyCulture } = getFormInfo(countries, positions);
     const basicInfoRow = [
       ['firstName', 'lastName'],
-      ['currentPosition', 'currentCompany'],
-      ['nationality', 'beContacted'],
+      ['position', 'company'],
+      ['nationality', 'tobeContacted'],
     ];
     const skillsRow = [
       ['skillsHave', 'skillsLearned'],
@@ -60,7 +63,7 @@ class ShareStory extends Component {
     return (
       <div className="ShareStory">
         {this.state.preview ? <div>
-          <StoryTemplate story={parseData(this.state.values)} user={this.props.user} />
+          <StoryTemplate story={parseCardsFromServer(parseCardsToServer(this.state.values))} user={this.props.user} />
           <Row>
             <Col span={2} offset={10}>
               <Button type="primary" onClick={e => this.setPreview(false)}>Back</Button>

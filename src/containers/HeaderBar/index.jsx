@@ -46,7 +46,7 @@ class HeaderBar extends Component {
           </Col>
           <Col span={3} offset={3}>
             <Popover
-              content={user.token ?
+              content={user.access_token ?
                        <FellowPopover onClose={this.clickLogin}/> :
                        <LoginForm onClose={this.clickLogin} />}
               placement="bottomRight"
@@ -54,7 +54,7 @@ class HeaderBar extends Component {
               trigger="click"
               visible={this.state.popover}
             >
-              <Button ghost onClick={this.clickLogin}>{user.token ? user.lastName : 'Login'}</Button>
+              <Button ghost onClick={this.clickLogin}>{user.access_token ? 'Menu' : 'Login'}</Button>
             </Popover>
           </Col>
         </Row>

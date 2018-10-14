@@ -6,7 +6,7 @@ import { getStoriesCard } from 'actions/fellow';
 
 const mapStateToProps = ({ user, fellow }) => ({ user, fellow });
 const mapDispatchToProps = dispatch => ({
-  fetchCard: data => dispatch(getStoriesCard(data))
+  fetchCard: data => dispatch(getStoriesCard(data)),
 });
 
 class StoriesCard extends Component {

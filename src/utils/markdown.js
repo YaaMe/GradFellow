@@ -1,11 +1,11 @@
 export const listItem = item => `+ ${item}`;
 export const groupItem = (content, item) => item ? `${content}\n${item}` : content;
 
-export const userInfoTemplate = (firstName, lastName, currentPosition, currentCompany) => `
+export const userInfoTemplate = (firstName, lastName, position, company) => `
 # ${lastName}
 # ${firstName}
-## ${currentPosition}
-## ${currentCompany}
+## ${position}
+## ${company}
 `;
 
 export const skillsHaveTemplate = (skillsHave = []) => `
