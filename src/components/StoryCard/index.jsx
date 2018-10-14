@@ -13,7 +13,7 @@ const title = (firstName, lastName, currentPosition, currentCompany) => (
 )
 
 
-export default ({ onClick, firstName, lastName, currentPosition, currentCompany, skills: { skillsHave }}) => (
+export default ({ onClick, firstName, lastName, currentPosition, currentCompany,  skillsHave }) => (
   <Card
     title={title(firstName, lastName, currentPosition, currentCompany)}
     onClick={onClick}

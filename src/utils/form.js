@@ -35,7 +35,17 @@ export const selectFormItem = (data) => {
 }
 
 export const getFormItem = (info, getFieldDecorator) => {
-  const { id, title, options, col } = info;
+  const { id, addField, title, options, col } = info;
+  if (!addField) {
+    return (
+      <Col {...col} key={id}>
+        <Form.Item>
+          <div className="title">{title}</div>
+          {getFieldDecorator(id, options)(selectFormItem(info))}
+        </Form.Item>
+      </Col>
+    )
+  }
   return (
     <Col {...col} key={id}>
       <Form.Item>
