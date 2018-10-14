@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 import Markdown from 'react-markdown';
 import Breadcrumb from 'containers/Breadcrumb';
 import Graph from 'react-graph-vis';
@@ -65,6 +65,7 @@ class Story extends Component {
         <Row>
           <Col span={8}>
             <Markdown source={userInfoTemplate(firstName, lastName, currentPosition, currentCompany)}/>
+            <Button type="primary" ghost>Message</Button>
           </Col>
           <Col span={16}>
             <Row>
