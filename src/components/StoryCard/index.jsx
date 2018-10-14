@@ -18,6 +18,6 @@ export default ({ onClick, firstName, lastName, currentPosition, currentCompany,
     title={title(firstName, lastName, currentPosition, currentCompany)}
   >
     <Markdown source={skillsHaveTemplate(skillsHave)}/>
-    <Button type="primary" onClick={onClick}>Read More</Button>
+    <Button style={{ float: 'right' }} type="primary" onClick={onClick}>Read More</Button>
   </Card>
 )
