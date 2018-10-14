@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'antd';
+import { Button, Card } from 'antd';
 import Markdown from 'react-markdown';
 import { skillsHaveTemplate } from 'utils/markdown';
 
@@ -16,8 +16,8 @@ const title = (firstName, lastName, currentPosition, currentCompany) => (
 export default ({ onClick, firstName, lastName, currentPosition, currentCompany,  skillsHave }) => (
   <Card
     title={title(firstName, lastName, currentPosition, currentCompany)}
-    onClick={onClick}
   >
     <Markdown source={skillsHaveTemplate(skillsHave)}/>
+    <Button type="primary" onClick={onClick}>Read More</Button>
   </Card>
 )

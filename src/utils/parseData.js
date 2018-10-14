@@ -11,3 +11,15 @@ export const parseData = (data) => {
     skillsRolesInCompany: skillsRolesInCompany.split('&')
   };
 };
+
+export const parseDataToServer = (data) => {
+  return {
+    ...data
+  };
+};
+
+export const parseServerToData = (data) => {
+  return {
+    ...data
+  };
+};
