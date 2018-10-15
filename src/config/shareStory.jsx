@@ -3,16 +3,19 @@ export const getFormInfo = (countries, positions) => {
     id: 'firstName',
     title: 'First Name',
     col: { span: 12 },
+    options: { rules: [{ required: true, message: 'Please input your First Name' }]},
   }, {
     id: 'lastName',
     title: 'Last Name',
     col: { span: 11, offset: 1 },
+    options: { rules: [{ required: true, message: 'Please input your Last Name' }]},
   }, {
     id: 'position',
     title: 'Current Position',
     type: 'select',
     selectOptions: positions,
     col: { span: 12 },
+    options: { rules: [{ required: true, message: 'Please select your Current Position' }]},
   }, {
     id: 'company',
     title: 'Current Company',
@@ -22,6 +25,7 @@ export const getFormInfo = (countries, positions) => {
     title: 'Nationality',
     type: 'select',
     selectOptions: countries,
+    options: { rules: [{ required: true, message: 'Please select your Nationality' }]},
     col: { span: 12 },
   }, {
     id: 'tobeContacted',
