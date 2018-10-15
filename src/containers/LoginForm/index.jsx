@@ -32,7 +32,7 @@ class LoginForm extends Component {
     }
     return (
       <div>
-        <Form onSubmit={this.handleSubmit}>
+        <Form>
           <Form.Item>
             {getFieldDecorator('userName', {})(
                <Input
@@ -51,7 +51,7 @@ class LoginForm extends Component {
              )}
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit">Log in</Button>
+            <Button type="primary" onClick={this.handleSubmit}>Log in</Button>
           </Form.Item>
         </Form>
       </div>
