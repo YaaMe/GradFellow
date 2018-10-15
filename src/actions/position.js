@@ -6,7 +6,7 @@ export const getPositions = () => ({
   type: ACTION_TYPE.GET_POSITIONS,
   $fetch: {
     requestBody: {
-      url: '/position/'
+      url: '/position'
     }
   }
 });

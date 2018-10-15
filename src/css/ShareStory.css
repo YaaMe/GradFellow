@@ -1,3 +1,8 @@
 .ShareStory {
-    height: 100vh;
+    height: 100%;
+    padding-top: 2vh;
+}
+
+.ShareStory .button-region {
+    padding-bottom: 2vh;
 }

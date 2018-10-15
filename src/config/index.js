@@ -12,8 +12,6 @@ export const header = [{
 //    disabled: true
 //  }
 }, {
-
-}, {
   title: 'Donate',
   route: 'Donate',
   options: {}

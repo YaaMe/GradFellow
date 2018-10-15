@@ -6,7 +6,7 @@ export const getCountries = () => ({
   type: ACTION_TYPE.GET_COUNTRIES,
   $fetch: {
     requestBody: {
-      url: '/country/'
+      url: '/country'
     },
   }
 });
