@@ -47,7 +47,7 @@ export const parseCardsFromServer = ({
   skills_recommend,
   company,
   skills_tasks_auto,
-  skills_roles_in_company,
+  skills_roles_in_company = '',
   skills_learned,
   cc_competitiveness,
   tobe_contacted,
