@@ -1,3 +1,10 @@
+.Story {
+    padding-top: 2vh;
+}
 .Story .Graph {
     height: 400px;
+}
+.Story .userInfo {
+    padding-top: 5vw;
+    text-align: center;
 }

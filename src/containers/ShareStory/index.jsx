@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { Row, Col, Form, Button } from 'antd';
+import { Row, Col, Form, Button, Icon } from 'antd';
 import { getRegion } from 'utils/form';
 import { parseCardsFromServer, parseCardsToServer } from 'utils/parseData';
 import { getFormInfo } from 'config/shareStory';
@@ -63,12 +63,12 @@ class ShareStory extends Component {
     return (
       <div className="ShareStory">
         {this.state.preview ? <div>
-          <StoryTemplate story={parseCardsFromServer(parseCardsToServer(this.state.values))} user={this.props.user} />
           <Row>
-            <Col span={2} offset={10}>
-              <Button type="primary" onClick={e => this.setPreview(false)}>Back</Button>
+            <Col span={2} offset={2}>
+              <a onClick={e => this.setPreview(false)}><Icon type="left"/>Back</a>
             </Col>
           </Row>
+          <StoryTemplate story={parseCardsFromServer(parseCardsToServer(this.state.values))} user={this.props.user} />
         </div> : null
         }
         <div style={{ display: this.state.preview ? 'none': 'block'}}>

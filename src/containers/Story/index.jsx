@@ -69,13 +69,15 @@ class Story extends Component {
 
     return (
       <div className="Story">
-        <Breadcrumb items={['Stories', user.job, user.homeCountry]}/>
         <Row>
-          <Col span={8}>
+          <Col span={7} className="userInfo">
             <Markdown source={userInfoTemplate(firstName, lastName, position, company)}/>
             <Button type="primary" ghost>Message</Button>
           </Col>
           <Col span={16}>
+            <Row>
+              <Breadcrumb items={['Stories', position, company]}/>
+            </Row>
             <Row>
               <Markdown source={[
                 skillsHaveTemplate(skillsHave),
