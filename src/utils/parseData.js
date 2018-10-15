@@ -67,7 +67,7 @@ export const parseCardsFromServer = ({
   skillsRecommend: [skills_recommend],
   company: company,
   skillsTasksAuto: [skills_tasks_auto],
-  skillsRolesInCompany: skills_roles_in_company ? skills_roles_in_company.split(',') : '',
+  skillsRolesInCompany: skills_roles_in_company ? skills_roles_in_company.split(',') : [''],
   skillsLearned: [skills_learned],
   ccCompetitiveness: cc_competitiveness,
   tobeContacted: tobe_contacted,
